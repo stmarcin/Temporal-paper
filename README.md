@@ -32,6 +32,8 @@ ___
 [R06 Frequency graph](#r06-frequency-graph)<br>
 
 [**Licence**](#licence)<br>
+[**Funding statement**](#funding-statement)<br>
+
 
 ___
 
@@ -252,9 +254,23 @@ Selected GTFS files: `stop_times.txt`, `trips.txt`, `calendar.txt` and `routes.t
 
 Graph `Plot_Freq.png` stored in `Results/p07_Graphs/` folder (**Figure 2**)
 
+[**Back to top**](#temporal-paper)
+
+___
+
+
+### Funding statement
+
+This document is created within the **MSCA CAlCULUS** project.  
+
+*This project has received funding from the European Union's Horizon 2020 research and innovation Programme under the Marie Sklodowska-Curie Grant Agreement no. 749761.*  
+*The views and opinions expressed herein do not necessarily reflect those of the European Commission.*
+
 ___
 
 ### **Licence**
 
 License for scripts: CC-BY-4.0
 
+<br>
+[**Back to top**](#temporal-paper)
