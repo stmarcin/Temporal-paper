@@ -31,8 +31,8 @@ ___
 [R05 Combine Gini coefficients](#r05-combine-gini-coefficients)<br>
 [R06 Frequency graph](#r06-frequency-graph)<br>
 
-[**Licence**](#licence)<br>
 [**Funding statement**](#funding-statement)<br>
+[**Licence**](#licence)<br>
 
 
 ___
@@ -272,5 +272,5 @@ ___
 
 License for scripts: CC-BY-4.0
 
-<br>
+
 [**Back to top**](#temporal-paper)
