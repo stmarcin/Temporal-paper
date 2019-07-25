@@ -62,6 +62,8 @@ The input for the repo are origin-destination (OD) travel time matrices which us
 
 For the details please consult the file `Data_description.pdf` which can be found [here](https://doi.org/10.18150/repod.7727991).
 
+[**Back to top**](#temporal-paper)
+
 ## Sampling procedures
 
 a) **Systematic Sampling** departure time selected using a regular interval
@@ -73,6 +75,7 @@ For details please consult [Owen & Murphy (2018)](https://trid.trb.org/view/1497
 
 The detailed description of the script which enables to generate departure time can be found in this [repo](https://github.com/stmarcin/Sampling_Departure_Time).
 
+[**Back to top**](#temporal-paper)
 
 ## Tested temporal resolutions
 
@@ -92,6 +95,7 @@ resolution | interations
 30 | 2
 60 | 1
 
+[**Back to top**](#temporal-paper)
 
 ## Workflow
 
@@ -173,6 +177,8 @@ Set of `csv` files stored in two folders (names of files depends on the type of 
 
 Additionally, in the `t04_Temporary` the script saves values of accessibility measures calculated for a systematic approach (one file for each of destination and time-window period; for the details please consult `Data_description.pdf` file).
 
+[**Back to top**](#temporal-paper)
+
 ### **R02 Travel time calculations**
 
 `R02_TravelTime.R` compares precision of travel times' estimation using MAPE, MAE and maximum difference (maxdiff). The script uses all 4 sampling methods.
@@ -186,6 +192,8 @@ Set of OD matrixes stored in `f03_Aggregates_Ai` folder (census track centroids 
 
 `TravTime.csv` file stored in `Results/t05_TTResults` folder which contains MAPE, MAE and maxdiff (maximum difference) indicators (MAPE values used for **Table 3**)
 
+[**Back to top**](#temporal-paper)
+
 ### **R03 Compare travel times**
 
 `R03_Comparison_TravelTime.R` prepares graphs which present the loose of precision of travel time estimation due to reduced temporal resolution.
@@ -198,6 +206,8 @@ Set of OD matrixes stored in `f03_Aggregates_Ai` folder (census track centroids 
 
 + `TravelTime_sampling.png` figure which compares the quality of different sampling methods. (**Figure 3**)
 + `TravelTime_estimation.png` figure which presents the loose of precision (MAPE & MAE) of hybrid model in different 1-hour-long scenarios and their average. (**Figure 5**)
+
+[**Back to top**](#temporal-paper)
 
 ### **R04 Compare accessibility measures**
 
@@ -214,6 +224,7 @@ Set of files (one per each destination) with MAPEs vales stored in `t06_Results`
 + `Ai_Hybrid_complex.png` the same as above but added a zoom-in with excluded curves for cumulative opportunities (**Figure 6**).
 + `Ai_H_scenarios.png` presents MAPE of hybrid model in different 1-hour-long scenarios, for different types of measures and destinations (**Figure 7** in the annex)
 
+[**Back to top**](#temporal-paper)
 
 ### **R05 Combine Gini coefficients**
 
@@ -227,6 +238,7 @@ Set of files (one per each destination and time window) with Gini coefficients s
 
 + `Gini_table.xlsx` stored in `t07_Graphs` folder (data used for **Table 5**)
 
+[**Back to top**](#temporal-paper)
 
 ### **R06 Frequency graph**    
 
