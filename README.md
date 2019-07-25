@@ -60,7 +60,7 @@ The input for the repo are origin-destination (OD) travel time matrices which us
     6) `Edu_Lo`: Secondary schools with attached number of classes (68 points)
     7) `OBWOD`: census track centroids with number of inhabitants (1745 points)
 
-For the details please consult the file `Data_description.pdf`.
+For the details please consult the file `Data_description.pdf` which can be found [here](https://doi.org/10.18150/repod.7727991).
 
 ## Sampling procedures
 
@@ -97,7 +97,7 @@ resolution | interations
 
 The repo consists of serveral of subsequent scripts:
 
-#### **R01 Compare precision of accessibility measurement**
+### **R01 Compare precision of accessibility measurement**
 
 The `R01_Ai_Calculations.R` script applies different functions, depending on which of accessibility measures is in use. The code select departure time according to a given sampling method for all considered temporal resolutions. Then it calculates accessibility measures and calculate (aggregated) errors:
 
@@ -173,7 +173,7 @@ Set of `csv` files stored in two folders (names of files depends on the type of 
 
 Additionally, in the `t04_Temporary` the script saves values of accessibility measures calculated for a systematic approach (one file for each of destination and time-window period; for the details please consult `Data_description.pdf` file).
 
-#### **R02 Travel time calculations**
+### **R02 Travel time calculations**
 
 `R02_TravelTime.R` compares precision of travel times' estimation using MAPE, MAE and maximum difference (maxdiff). The script uses all 4 sampling methods.
 
@@ -186,7 +186,7 @@ Set of OD matrixes stored in `f03_Aggregates_Ai` folder (census track centroids 
 
 `TravTime.csv` file stored in `Results/t05_TTResults` folder which contains MAPE, MAE and maxdiff (maximum difference) indicators (MAPE values used for **Table 3**)
 
-#### **R03 Compare travel times**
+### **R03 Compare travel times**
 
 `R03_Comparison_TravelTime.R` prepares graphs which present the loose of precision of travel time estimation due to reduced temporal resolution.
 
@@ -199,7 +199,7 @@ Set of OD matrixes stored in `f03_Aggregates_Ai` folder (census track centroids 
 + `TravelTime_sampling.png` figure which compares the quality of different sampling methods. (**Figure 3**)
 + `TravelTime_estimation.png` figure which presents the loose of precision (MAPE & MAE) of hybrid model in different 1-hour-long scenarios and their average. (**Figure 5**)
 
-#### **R04 Compare accessibility measures**
+### **R04 Compare accessibility measures**
 
 `R03_Comparison_TravelTime.R` prepares graphs which present the loose of precision of travel time estimation due to reduced temporal resolution.
 
@@ -215,7 +215,7 @@ Set of files (one per each destination) with MAPEs vales stored in `t06_Results`
 + `Ai_H_scenarios.png` presents MAPE of hybrid model in different 1-hour-long scenarios, for different types of measures and destinations (**Figure 7** in the annex)
 
 
-#### **R05 Combine Gini coefficients**
+### **R05 Combine Gini coefficients**
 
 `R05_Gini_Ai.R` combines Gini coefficients stored in separate files (one for each destination and time-window) and save an output to xlsx file.
 
@@ -228,7 +228,7 @@ Set of files (one per each destination and time window) with Gini coefficients s
 + `Gini_table.xlsx` stored in `t07_Graphs` folder (data used for **Table 5**)
 
 
-#### **R06 Frequency graph**    
+### **R06 Frequency graph**    
 
 Simple script used to draw a graph which presents the total number of vehicles in 1-hour-long periods of time (Figure 2 in the paper).
 
@@ -242,7 +242,7 @@ Graph `Plot_Freq.png` stored in `Results/p07_Graphs/` folder (**Figure 2**)
 
 ___
 
-### Licence
+### **Licence**
 
 License for scripts: CC-BY-4.0
 
