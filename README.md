@@ -272,5 +272,5 @@ ___
 
 License for scripts: CC-BY-4.0
 
-<br>
+
 [**Back to top**](#temporal-paper)
