@@ -39,8 +39,8 @@ ___
 
 ## Input
 
-The input for the repo are origin-destination (OD) travel time matrices which uses census track centroids as **origins**. All ODs are stored in two subfolders in `Data.zip`.  
-**Destinations** of ODs are:
+The input for the repo are origin-destination (OD) travel time matrices which uses census track centroids as **origins**. All ODs are stored in two subfolders in `Data.zip` which can be downloaded from [here](http://dx.doi.org/10.18150/repod.7727991)  
+**Destinations** in ODs are:
 
 + Subfolder `f03_Aggregates`
 
@@ -68,9 +68,11 @@ For the details please consult the file `Data_description.pdf` which can be foun
 
 ## Sampling procedures
 
-a) **Systematic Sampling** departure time selected using a regular interval
-b) **Simple Random Sampling**  a specified number of sample times are selected at random (without replacement)
-c) **Hybrid Sampling** departure times are randomly selected from given time intervals (resulted from applied temporal resolution)
+The following sampling procedures were tested for the study:
+
+a) **Systematic Sampling** departure time selected using a regular interval  
+b) **Simple Random Sampling**  a specified number of sample times are selected at random (without replacement)  
+c) **Hybrid Sampling** departure times are randomly selected from given time intervals (resulted from applied temporal resolution)  
 d) **Constrained Random Walk Sampling** 1st departure time is randomly selected within the first time interval, and next ones from subsequent time intervals defined by a temporal resolution (+1 resolution +/- 0.5 temporal resolution).
 
 For details please consult [Owen & Murphy (2018)](https://trid.trb.org/view/1497217). 
@@ -105,15 +107,18 @@ The repo consists of serveral of subsequent scripts:
 
 ### **R01 Compare precision of accessibility measurement**
 
-The `R01_Ai_Calculations.R` script applies different functions, depending on which of accessibility measures is in use. The code select departure time according to a given sampling method for all considered temporal resolutions. Then it calculates accessibility measures and calculate (aggregated) errors:
+The `R01_Ai_Calculations.R` script applies different functions, depending on which of accessibility measures is in use. The code selects departure time according to a given sampling method for all considered temporal resolutions. Then it calculates accessibility measures and calculate (aggregated) errors:
 
-+ MAPE (*Mean Absolute Percentage Error*), expressed in %, calculated according to the formula: `mean(abs((y - x)/y))*100`;
-+ MAE (*Mean Absolute Error*), expressed in absolute values (e.g. minutes) calculated according to the formula: `mean(abs(y-x))`;
-+ maxdif (*maximum difference*), expressed in absolute values (e.g. minutes) calculated according to the formula: `max(abs(y-x))`;
++ MAPE (*Mean Absolute Percentage Error*), expressed in %, calculated according to the formula:  
+`mean(abs((y - x)/y))*100`;
++ MAE (*Mean Absolute Error*), expressed in absolute values (e.g. minutes) calculated according to the formula:  
+`mean(abs(y-x))`;
++ maxdif (*maximum difference*), expressed in absolute values (e.g. minutes) calculated according to the formula:  
+`max(abs(y-x))`;
 
-    where x is an evaluated value, while y - a benchmark one.
+    where `x` is an evaluated value, while `y` - a benchmark one.
 
-Additionally each of the scripts calculate Gini coefficient for evaluated as well as benchmark values.
+Additionally, each of the scripts calculate Gini coefficients for all tested temporal resolutions as well as for benchmark values.
 
 Particular functions (seperate for each of the applied accessibility measures) are stored in separate Rscripts:
 
@@ -137,7 +142,7 @@ Function syntax:
 
 3) **potential accessibility** for accessibility to education (secondary schools, `Edu`), hospitals `HOS` and population `OBWOD`. The funciton uses negative exponential function: `(mass*(exp(-beta*TravelTime)`. 
 
-    Application of temporal resolution: This script aggregates selected travel times using harmonic-based means (for details please consult [Stępniak & Jacobs-Crisioni (2017)](http://www.sciencedirect.com/science/article/pii/S0966692316305385)). 
+    Application of temporal resolution: This script aggregates selected travel times using harmonic-based means (for details please consult [Stępniak & Jacobs-Crisioni (2017)](http://www.sciencedirect.com/science/article/pii/S0966692316305385). 
     
     Function syntax:
     
@@ -172,7 +177,7 @@ Set of `csv` files stored in two folders (names of files depends on the type of 
     + values of Gini (stored in subfolder `Gini`)
 
 + `t04_Temporary` files with disaggrated values (calculated separately for each of randomly selected scenarios):
-    + MAPE (data used for **Table 4**)
+    + MAPE (data used for **Table 4** in the paper)
     + MAE
     + maxdiff
     + Gini
@@ -192,7 +197,7 @@ Set of OD matrixes stored in `f03_Aggregates_Ai` folder (census track centroids 
 
 ##### Output 
 
-`TravTime.csv` file stored in `Results/t05_TTResults` folder which contains MAPE, MAE and maxdiff (maximum difference) indicators (MAPE values used for **Table 3**)
+`TravTime.csv` file stored in `Results/t05_TTResults` folder which contains MAPE, MAE and maxdiff (maximum difference) indicators (MAPE values used for **Table 3** in the paper)
 
 [**Back to top**](#temporal-paper)
 
@@ -206,8 +211,8 @@ Set of OD matrixes stored in `f03_Aggregates_Ai` folder (census track centroids 
 
 ##### Output
 
-+ `TravelTime_sampling.png` figure which compares the quality of different sampling methods. (**Figure 3**)
-+ `TravelTime_estimation.png` figure which presents the loose of precision (MAPE & MAE) of hybrid model in different 1-hour-long scenarios and their average. (**Figure 5**)
++ `TravelTime_sampling.png` figure which compares the quality of different sampling methods. (**Figure 3** in the paper)
++ `TravelTime_estimation.png` figure which presents the loose of precision (MAPE & MAE) of hybrid model in different 1-hour-long scenarios and their average. (**Figure 5** in the paper)
 
 [**Back to top**](#temporal-paper)
 
@@ -221,9 +226,9 @@ Set of files (one per each destination) with MAPEs vales stored in `t06_Results`
 
 ##### Output
 
-+ `Ai_Sampling.png` compares the quality of different sampling methods (**Figure 4**).
++ `Ai_Sampling.png` compares the quality of different sampling methods (**Figure 4** in the paper).
 + `Ai_Hybrid.png` compares all measures calculated for particular destinations, using MAPE of hybrid model in different 1-hour-long scenarios (not used in the paper).
-+ `Ai_Hybrid_complex.png` the same as above but added a zoom-in with excluded curves for cumulative opportunities (**Figure 6**).
++ `Ai_Hybrid_complex.png` the same as above but added a zoom-in with excluded curves for cumulative opportunities (**Figure 6** in the paper).
 + `Ai_H_scenarios.png` presents MAPE of hybrid model in different 1-hour-long scenarios, for different types of measures and destinations (**Figure 7** in the annex)
 
 [**Back to top**](#temporal-paper)
@@ -238,13 +243,13 @@ Set of files (one per each destination and time window) with Gini coefficients s
 
 ##### Output
 
-+ `Gini_table.xlsx` stored in `t07_Graphs` folder (data used for **Table 5**)
++ `Gini_table.xlsx` stored in `t07_Graphs` folder (data used for **Table 5** in the paper)
 
 [**Back to top**](#temporal-paper)
 
 ### **R06 Frequency graph**    
 
-Simple script used to draw a graph which presents the total number of vehicles in 1-hour-long periods of time (Figure 2 in the paper).
+Simple script used to draw a graph which presents the total number of vehicles in 1-hour-long periods of time (**Figure 2** in the paper).
 
 ##### Input
 
@@ -252,7 +257,7 @@ Selected GTFS files: `stop_times.txt`, `trips.txt`, `calendar.txt` and `routes.t
 
 ##### Output 
 
-Graph `Plot_Freq.png` stored in `Results/p07_Graphs/` folder (**Figure 2**)
+Graph `Plot_Freq.png` stored in `Results/p07_Graphs/` folder (**Figure 2** in the paper)
 
 [**Back to top**](#temporal-paper)
 
